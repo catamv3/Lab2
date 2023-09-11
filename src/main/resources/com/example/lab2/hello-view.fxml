@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="379.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab2.HelloController">
+   <children>
+      <VBox fx:id="textVBox" prefHeight="175.0" prefWidth="276.0">
+         <children>
+            <Label fx:id="annualInterestLabel" text="Annual Interest Rate:" />
+            <Label fx:id="numYearsLabel" text="Number of Years: ">
+               <padding>
+                  <Insets top="10.0" />
+               </padding></Label>
+            <Label fx:id="loanAmountLabel" layoutX="10.0" layoutY="28.0" text="Loan Amount">
+               <padding>
+                  <Insets top="12.0" />
+               </padding>
+            </Label>
+            <Label fx:id="monthlyPaymentLabel" layoutX="10.0" layoutY="28.0" text="Monthly Payment:">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="16.0" />
+               </padding></Label>
+            <Label fx:id="totalPaymentLabel" layoutX="10.0" layoutY="46.0" text="Total Payment:">
+               <padding>
+                  <Insets top="20.0" />
+               </padding></Label>
+         </children>
+      </VBox>
+      <VBox fx:id="inputVBox" prefHeight="400.0" prefWidth="231.0">
+         <children>
+            <TextField fx:id="annualInterestInp" promptText="Enter interest rate" />
+            <TextField fx:id="numYearsInput" layoutX="10.0" layoutY="10.0" promptText="Enter years" />
+            <TextField fx:id="loanAmountInput" layoutX="10.0" layoutY="35.0" promptText="Enter loan amount" />
+            <Label fx:id="monthlyPaymentDisplay">
+               <padding>
+                  <Insets top="16.0" />
+               </padding></Label>
+            <Label fx:id="totalPaymentDisplay" text=" ">
+               <padding>
+                  <Insets top="16.0" />
+               </padding></Label>
+            <Button fx:id="calculateButton" mnemonicParsing="false" onAction="#calculatePayments" text="Calculate" />
+         </children>
+      </VBox>
+   </children>
+</HBox>
