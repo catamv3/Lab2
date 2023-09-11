@@ -47,7 +47,8 @@
                <padding>
                   <Insets top="16.0" />
                </padding></Label>
-            <Button fx:id="calculateButton" mnemonicParsing="false" onAction="#calculatePayments" text="Calculate" />
+            <Button fx:id="calculateButton" mnemonicParsing="false" onAction="#calculatePayments" text="Calculate" textFill="WHITE" />
+            <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refresh" prefHeight="35.0" prefWidth="69.0" text="Refresh" />
          </children>
       </VBox>
    </children>

@@ -42,22 +42,40 @@ public class HelloController {
     @FXML
     private Label totalPaymentDisplay;
 
-
+    @FXML
+    private Button refreshButton;
 
     @FXML
     protected void calculatePayments(ActionEvent event){
 
+        try{
+            double interest = Double.parseDouble(annualInterestInp.getText());
 
-        double interest = Double.parseDouble(annualInterestInp.getText());
-        // =  Double.valueOf(intrst);
-        double years = Double.parseDouble(numYearsInput.getText());
+            // =  Double.valueOf(intrst);
+            double years = Double.parseDouble(numYearsInput.getText());
 
-        double amount = Double.parseDouble(loanAmountInput.getText());
+            double amount = Double.parseDouble(loanAmountInput.getText());
 
-        double totalAmount = (((interest/100)+1)*(years*amount));
-        double monthlyPay = totalAmount/12;
-        totalPaymentDisplay.setText(String.valueOf(totalAmount));
-        monthlyPaymentDisplay.setText(String.valueOf(monthlyPay));
+            double totalAmount = (((interest/100)+1)*(years*amount));
+            double monthlyPay = totalAmount/12;
+            totalPaymentDisplay.setText(String.valueOf(totalAmount));
+            monthlyPaymentDisplay.setText(String.valueOf(monthlyPay));
+        } catch (Exception e){
+            System.out.println("invalid number");
+        }
+
+    }
+
+    @FXML
+    protected void refresh(ActionEvent event){
+        monthlyPaymentDisplay.setText("");
+        totalPaymentDisplay.setText("");
+        //annualInterestInp = new TextField();
+        annualInterestInp.setText("");
+       // numYearsInput = new TextField();
+        numYearsInput.setText("");
+       // loanAmountInput = new TextField();
+        loanAmountInput.setText("");
     }
 
 
